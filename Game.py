@@ -55,7 +55,7 @@ class Game:
     def print_game_state(self):
         # Imprime el estado actual del juego
         print("Jugador: Vida =", self.player.health, "Inventario =", [item.name for item in self.player.inventory])
-        print("Inventario de comida: ", [item.symbol for item in self.player.inventory_food])
+        print("Inventario de polas: ", [item.symbol for item in self.player.inventory_food])
         print("Monstruo: Vida =", self.monster.health)
         print("Mapa:")
         for i, row in enumerate(self.grid):
@@ -86,7 +86,7 @@ class Game:
             if self.player.inventory_food:
                 self.player.eat_food()
             else:
-                print("No tienes comida")
+                print("No tienes polas")
         elif action == "atacar":
             if self.player.x == self.monster.x and (
                     self.player.y - self.monster.y == -1 or self.player.y - self.monster.y == 1):
